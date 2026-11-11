@@ -116,3 +116,66 @@ fn comparison() {
 - Jalankan: `cargo test comparison -- --exact --nocapture`
 
 > Di contoh ini `let result` ditulis berulang kali. Itu **shadowing** (lihat [02-variable](../02-variable/README.md)).
+
+## 4. Operasi boolean
+
+Operator untuk menggabungkan / membalik nilai boolean.
+
+| Operator | Keterangan |
+|---|---|
+| `&&` | dan |
+| `\|\|` | atau |
+| `!` | kebalikan |
+
+### `&&` (dan): `true` hanya kalau **dua-duanya** `true`
+
+| Nilai 1 | Nilai 2 | Hasil |
+|---|---|---|
+| true | true | **true** |
+| true | false | false |
+| false | true | false |
+| false | false | false |
+
+### `||` (atau): `true` kalau **salah satu** `true`
+
+| Nilai 1 | Nilai 2 | Hasil |
+|---|---|---|
+| true | true | true |
+| true | false | true |
+| false | true | true |
+| false | false | **false** |
+
+### `!` (kebalikan): membalik nilai
+
+| Nilai | Hasil |
+|---|---|
+| `!true` | false |
+| `!false` | true |
+
+### Contoh: cek kelulusan
+
+Lulus kalau absen **dan** nilai akhir sama-sama minimal 75.
+
+```rust
+#[test]
+fn boolean_operator() {
+    let absen = 70;
+    let nilai_akhir = 80;
+
+    let lulus_absen = absen >= 75;             // false
+    let lulus_nilai_akhir = nilai_akhir >= 75; // true
+
+    let lulus_final = lulus_absen && lulus_nilai_akhir; // false && true
+    println!("{}", lulus_final);
+}
+```
+
+- Jalankan: `cargo test boolean_operator -- --exact --nocapture`
+
+Output:
+```
+false
+```
+
+> Hasilnya `false` karena absen kurang dari 75. Dengan `&&`, satu syarat gagal = semuanya gagal.
+> Comparison operator (`>=`) menghasilkan boolean, lalu digabung pakai operasi boolean (`&&`).

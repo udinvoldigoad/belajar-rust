@@ -12,7 +12,7 @@ Catatan belajar Rust, satu folder per topik.
 | 01 | [01-hello-world](01-hello-world/README.md) | `cargo run`, `cargo build --release`, `cargo test`, komentar |
 | 02 | [02-variable](02-variable/README.md) | `let`, `let mut`, static typing, shadowing |
 | 03 | [03-tipe-data](03-tipe-data/README.md) | Scalar & compound, integer, float, konversi `as`, boolean |
-| 04 | [04-operator](04-operator/README.md) | Operasi numerik, augmented assignment, perbandingan |
+| 04 | [04-operator](04-operator/README.md) | Operasi numerik, augmented assignment, perbandingan, operasi boolean |
 
 ## Cara menjalankan
 

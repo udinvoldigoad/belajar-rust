@@ -45,3 +45,16 @@ fn comparison() {
     let result = a == b;
     println!("{}", result);
 }
+
+// Boolean Operators
+#[test]
+fn boolean_operator() {
+    let absen = 70;
+    let nilai_akhir = 80;
+
+    let lulus_absen = absen >= 75;
+    let lulus_nilai_akhir = nilai_akhir >= 75;
+
+    let lulus_final = lulus_absen && lulus_nilai_akhir;
+    println!("{}", lulus_final);
+}
