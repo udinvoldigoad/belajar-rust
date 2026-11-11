@@ -7,6 +7,12 @@ fn main() {
 }
 
 #[test]
-fn hello_test(){
+fn hello_test() {
     println!("Hello Test");
+}
+
+#[test]
+fn test_variable() {
+    let name = "Ridho Maulana Saputra";
+    println!("Hello {}", name);
 }

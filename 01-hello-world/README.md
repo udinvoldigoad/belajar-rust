@@ -79,5 +79,33 @@ test hello_test ... ok
 > Tanda `--` memisahkan opsi untuk cargo (sebelah kiri) dan opsi untuk program test-nya (sebelah kanan).
 > `--exact` dan `--nocapture` itu opsi untuk program test, jadi ditaruh setelah `--`.
 
+## 5. Variable
+
+- Variable adalah **tempat untuk menyimpan data**.
+- Dibuat pakai kata kunci `let`.
+- Secara default variable di Rust **tidak bisa diubah** (immutable) setelah diisi data.
+
+```rust
+#[test]
+fn test_variable() {
+    let name = "Ridho Maulana Saputra";
+    println!("Hello {}", name);
+}
+```
+
+- `{}` di dalam `println!` adalah tempat nilai variable dimasukkan.
+- Jalankan: `cargo test test_variable -- --exact --nocapture`
+
+Output:
+```
+Hello Ridho Maulana Saputra
+```
+
+Kalau dicoba diubah, hasilnya **error** saat compile:
+```rust
+let name = "Ridho";
+name = "Udin"; // error: cannot assign twice to immutable variable
+```
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
