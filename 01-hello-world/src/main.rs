@@ -114,3 +114,11 @@ fn augmented_assignment() {
     a -= 2;
     println!("{}", a);
 }
+
+// Boolean
+#[test]
+fn boolean() {
+    let a = true; // implicit
+    let b: bool = false; // explicit
+    println!("{} {}", a, b);
+}

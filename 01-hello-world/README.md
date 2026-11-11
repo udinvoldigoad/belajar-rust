@@ -385,5 +385,28 @@ Output:
 13
 ```
 
+## 13. Boolean
+
+- Tipe data yang nilainya cuma 2: `true` (benar) atau `false` (salah).
+- Nama tipenya `bool`.
+
+```rust
+#[test]
+fn boolean() {
+    let a = true;        // implicit: Rust tahu ini bool
+    let b: bool = false; // explicit: tipe ditulis sendiri
+    println!("{} {}", a, b);
+}
+```
+
+- Jalankan: `cargo test boolean -- --exact --nocapture`
+
+Output:
+```
+true false
+```
+
+> `println!` bisa menampilkan lebih dari satu nilai: setiap `{}` diisi berurutan oleh variable setelahnya.
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
