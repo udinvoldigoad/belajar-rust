@@ -158,5 +158,39 @@ error[E0308]: mismatched types
 > `mut` cuma membolehkan **nilai** diubah, bukan **tipe datanya**.
 > `"Udin"` -> boleh (sama-sama teks), `10` -> tidak boleh (angka).
 
+## 8. Shadowing
+
+- Di Rust kita **boleh** membuat variable baru dengan **nama yang sama** pakai `let` lagi.
+- Variable yang lama jadi **tertutup** (tidak bisa dipakai lagi). Ini disebut **shadowing**.
+- Karena ini variable **baru**, tipe datanya boleh beda (teks jadi angka).
+- Boleh dipakai, tapi jangan terlalu sering karena bisa bikin bingung yang baca kode.
+
+```rust
+#[test]
+fn shadowing() {
+    let name = "Ridho Maulana Saputra"; // teks
+    println!("Hello {}", name);
+
+    let name = 10; // variable baru, nama sama, tipe angka
+    println!("Hello {}", name);
+}
+```
+
+- Jalankan: `cargo test shadowing -- --exact --nocapture`
+
+Output:
+```
+Hello Ridho Maulana Saputra
+Hello 10
+```
+
+Bedanya dengan `mut`:
+
+| | `let mut` + ubah nilai | Shadowing (`let` lagi) |
+|---|---|---|
+| Cara | `name = ...` | `let name = ...` |
+| Variable | Tetap variable yang sama | Bikin variable **baru** |
+| Boleh ganti tipe data? | Tidak (static typing) | Boleh |
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.

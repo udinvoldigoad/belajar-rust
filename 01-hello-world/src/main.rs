@@ -25,3 +25,14 @@ fn test_mutable() {
     name = "Udin Voldigoad";
     println!("Hello {}", name);
 }
+
+#[test]
+fn shadowing() {
+    let name = "Ridho Maulana Saputra";
+    println!("Hello {}", name);
+
+    let name = 10;
+    println!("Hello {}", name);
+
+    println!("Hello {}", name);
+}
