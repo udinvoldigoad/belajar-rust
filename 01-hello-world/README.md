@@ -408,5 +408,48 @@ true false
 
 > `println!` bisa menampilkan lebih dari satu nilai: setiap `{}` diisi berurutan oleh variable setelahnya.
 
+## 14. Comparison operator (operator perbandingan)
+
+Operator untuk **membandingkan** dua nilai. Hasilnya selalu **boolean** (`true` / `false`).
+
+| Operator | Keterangan | Contoh (`a = 10`, `b = 20`) |
+|---|---|---|
+| `>` | lebih dari | `a > b` = false |
+| `<` | kurang dari | `a < b` = true |
+| `>=` | lebih dari sama dengan | `a >= b` = false |
+| `<=` | kurang dari sama dengan | `a <= b` = true |
+| `==` | sama dengan | `a == b` = false |
+| `!=` | tidak sama dengan | `a != b` = true |
+
+> `=` (satu) untuk **mengisi** variable, `==` (dua) untuk **membandingkan**.
+> `!=` tidak ada di slide, tapi juga sering dipakai.
+
+```rust
+#[test]
+fn comparison() {
+    let a = 10;
+    let b = 20;
+
+    let result = a > b;
+    println!("{}", result); // false
+
+    let result = a >= b;
+    println!("{}", result); // false
+
+    let result = a < b;
+    println!("{}", result); // true
+
+    let result = a <= b;
+    println!("{}", result); // true
+
+    let result = a == b;
+    println!("{}", result); // false
+}
+```
+
+- Jalankan: `cargo test comparison -- --exact --nocapture`
+
+> Di contoh ini `let result` ditulis berulang kali. Itu **shadowing** (lihat bagian 8).
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.

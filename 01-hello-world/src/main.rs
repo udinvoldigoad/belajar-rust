@@ -122,3 +122,25 @@ fn boolean() {
     let b: bool = false; // explicit
     println!("{} {}", a, b);
 }
+
+// Comparison Operators
+#[test]
+fn comparison() {
+    let a = 10;
+    let b = 20;
+
+    let result = a > b;
+    println!("{}", result);
+
+    let result = a >= b;
+    println!("{}", result);
+
+    let result = a < b;
+    println!("{}", result);
+
+    let result = a <= b;
+    println!("{}", result);
+
+    let result = a == b;
+    println!("{}", result);
+}
