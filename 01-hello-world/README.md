@@ -137,5 +137,26 @@ Hello Udin Voldigoad
 
 > Tips: pakai `let` biasa dulu. Tambahkan `mut` hanya kalau memang perlu diubah.
 
+## 7. Static typing
+
+- Rust itu bahasa **static typing**: sekali variable dibuat dengan tipe data tertentu,
+  tipenya **tidak bisa berubah** jadi tipe lain.
+- Contoh: variable berisi teks (string) tidak bisa diisi angka (number), walaupun pakai `mut`.
+
+```rust
+let mut name = "Ridho"; // tipe: teks (&str)
+name = 10;              // error! ini angka, bukan teks
+```
+
+Error saat compile:
+```
+error[E0308]: mismatched types
+  |     name = 10;
+  |            ^^ expected `&str`, found integer
+```
+
+> `mut` cuma membolehkan **nilai** diubah, bukan **tipe datanya**.
+> `"Udin"` -> boleh (sama-sama teks), `10` -> tidak boleh (angka).
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
