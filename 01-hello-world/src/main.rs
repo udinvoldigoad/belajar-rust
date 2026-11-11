@@ -101,3 +101,16 @@ fn numeric_operator() {
     println!("{}", c);
     println!("{}", d);
 }
+
+// Augmented Assignment
+#[test]
+fn augmented_assignment() {
+    let mut a = 10;
+    println!("{}", a);
+
+    a += 5;
+    println!("{}", a);
+
+    a -= 2;
+    println!("{}", a);
+}

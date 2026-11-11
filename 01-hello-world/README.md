@@ -348,5 +348,42 @@ Output:
 > Pembagian `/` pada integer hasilnya **tetap bilangan bulat**, bagian desimalnya dibuang: `10 / 3` = 3.
 > Kalau mau hasil desimal, pakai float: `10.0 / 3.0` = 3.333...
 
+## 12. Augmented assignment
+
+Cara singkat untuk mengubah nilai variable dengan operasi numerik.
+
+| Cara panjang | Cara singkat |
+|---|---|
+| `a = a + 10` | `a += 10` |
+| `a = a - 10` | `a -= 10` |
+| `a = a * 10` | `a *= 10` |
+| `a = a / 10` | `a /= 10` |
+| `a = a % 10` | `a %= 10` |
+
+> Variable-nya harus `mut`, karena nilainya diubah.
+
+```rust
+#[test]
+fn augmented_assignment() {
+    let mut a = 10;
+    println!("{}", a); // 10
+
+    a += 5;            // a = 10 + 5
+    println!("{}", a); // 15
+
+    a -= 2;            // a = 15 - 2
+    println!("{}", a); // 13
+}
+```
+
+- Jalankan: `cargo test augmented_assignment -- --exact --nocapture`
+
+Output:
+```
+10
+15
+13
+```
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
