@@ -1,0 +1,8 @@
+@"
+/target/
+**/target/
+.vscode/*
+!.vscode/extensions.json
+.idea/
+Thumbs.db
+"@ | Set-Content .gitignore
