@@ -16,3 +16,12 @@ fn test_variable() {
     let name = "Ridho Maulana Saputra";
     println!("Hello {}", name);
 }
+
+#[test]
+fn test_mutable() {
+    let mut name = "Ridho Maulana Saputra";
+    println!("Hello {}", name);
+
+    name = "Udin Voldigoad";
+    println!("Hello {}", name);
+}

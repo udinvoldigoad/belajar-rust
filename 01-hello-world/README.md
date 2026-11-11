@@ -107,5 +107,35 @@ let name = "Ridho";
 name = "Udin"; // error: cannot assign twice to immutable variable
 ```
 
+## 6. Mutable variable (`let mut`)
+
+Kalau variable perlu **diubah nilainya**, tambahkan kata kunci `mut` setelah `let`.
+
+```rust
+#[test]
+fn test_mutable() {
+    let mut name = "Ridho Maulana Saputra";
+    println!("Hello {}", name);
+
+    name = "Udin Voldigoad"; // boleh, karena pakai mut
+    println!("Hello {}", name);
+}
+```
+
+- Jalankan: `cargo test test_mutable -- --exact --nocapture`
+
+Output:
+```
+Hello Ridho Maulana Saputra
+Hello Udin Voldigoad
+```
+
+| | `let` | `let mut` |
+|---|---|---|
+| Nilai bisa diubah? | Tidak (immutable) | Bisa (mutable) |
+| Kalau diubah | Error saat compile | Aman |
+
+> Tips: pakai `let` biasa dulu. Tambahkan `mut` hanya kalau memang perlu diubah.
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
