@@ -36,3 +36,15 @@ fn shadowing() {
 
     println!("Hello {}", name);
 }
+
+
+/*
+    ini komentar lebih dari 1 baris
+    ini komentar lebih dari 1 baris
+    ini komentar lebih dari 1 baris
+ */
+#[test]
+fn comment() {
+    // ini komentar
+    println!("Hello") // ini komentar
+}

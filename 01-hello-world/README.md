@@ -192,5 +192,27 @@ Bedanya dengan `mut`:
 | Variable | Tetap variable yang sama | Bikin variable **baru** |
 | Boleh ganti tipe data? | Tidak (static typing) | Boleh |
 
+## 9. Komentar
+
+- Komentar adalah tulisan di kode yang **dihapus/diabaikan saat compile**, jadi tidak ikut jalan.
+- Dipakai untuk menambahkan **catatan/informasi** agar kode mudah dipahami (oleh kita atau programmer lain).
+
+| Jenis | Cara tulis |
+|---|---|
+| Satu baris | `// komentar` |
+| Lebih dari satu baris | diawali `/*` dan ditutup `*/` |
+
+```rust
+/*
+    ini komentar lebih dari 1 baris
+    ini komentar lebih dari 1 baris
+ */
+#[test]
+fn comment() {
+    // ini komentar satu baris
+    println!("Hello") // komentar juga bisa di akhir baris
+}
+```
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.
