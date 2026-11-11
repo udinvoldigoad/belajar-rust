@@ -313,5 +313,40 @@ Output `e` adalah `0`, bukan `1000000000`, karena `i8` cuma bisa menampung -128 
 
 - Jalankan: `cargo test number_conversion -- --exact --nocapture`
 
+## 11. Operasi numerik
+
+Rust mendukung semua operasi numerik, operatornya sama seperti bahasa pemrograman lain.
+
+| Operator | Keterangan | Contoh (`a = 10`, `b = 5`) |
+|---|---|---|
+| `+` | tambah | `a + b` = 15 |
+| `-` | kurang | `a - b` = 5 |
+| `*` | kali | `a * b` = 50 |
+| `/` | bagi | `a / b` = 2 |
+| `%` | sisa bagi (modulo) | `a % b` = 0 |
+
+```rust
+#[test]
+fn numeric_operator() {
+    let a = 10;
+    let b = 5;
+    let c = a * b;
+    let d = a + b;
+    println!("{}", c);
+    println!("{}", d);
+}
+```
+
+- Jalankan: `cargo test numeric_operator -- --exact --nocapture`
+
+Output:
+```
+50
+15
+```
+
+> Pembagian `/` pada integer hasilnya **tetap bilangan bulat**, bagian desimalnya dibuang: `10 / 3` = 3.
+> Kalau mau hasil desimal, pakai float: `10.0 / 3.0` = 3.333...
+
 > Catatan: folder `target/` ada di root workspace (`belajar-rust/target/`), bukan di dalam `01-hello-world/`.
 > Folder ini juga di-ignore git karena isinya hasil compile, bisa dibuat ulang kapan saja.

@@ -90,3 +90,14 @@ fn number_conversion() {
     let e: i8 = d as i8;
     println!("{}", e);
 }
+
+// Numeric Operator
+#[test]
+fn numeric_operator() {
+    let a = 10;
+    let b = 5;
+    let c = a * b;
+    let d = a + b;
+    println!("{}", c);
+    println!("{}", d);
+}
