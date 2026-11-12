@@ -123,3 +123,91 @@ true false
 ```
 
 > `println!` bisa menampilkan lebih dari satu nilai: setiap `{}` diisi berurutan oleh variable setelahnya.
+
+## 3. Char
+
+- Tipe data untuk **satu karakter**.
+- Ditulis pakai **petik satu** `'a'`. (Petik dua `"a"` itu teks/string, beda tipe.)
+
+```rust
+#[test]
+fn char() {
+    let char1 = 'a';
+    let char2 = 'b';
+
+    println!("{} {}", char1, char2);
+}
+```
+
+- Jalankan: `cargo test char -- --exact --nocapture`
+
+Output:
+```
+a b
+```
+
+## 4. Tuple
+
+- **Compound type**: kumpulan beberapa data, tipenya **boleh beda**.
+- Ditulis pakai kurung `( )`. Jumlah datanya tetap, tidak bisa ditambah/dikurangi.
+
+```rust
+#[test]
+fn tuple() {
+    let data: (i32, f64, bool) = (10, 10.5, true);
+    println!("{:?}", data);
+
+    // mengakses tuple pakai titik (.) + index (mulai dari 0)
+    let a = data.0;
+    let b = data.1;
+    let c = data.2;
+    println!("{} {} {}", a, b, c);
+
+    // destructuring: bongkar isi tuple ke beberapa variable sekaligus
+    let (a, b, c) = data;
+    println!("{} {} {}", a, b, c);
+}
+```
+
+- Jalankan: `cargo test tuple -- --exact --nocapture`
+
+Output:
+```
+(10, 10.5, true)
+10 10.5 true
+10 10.5 true
+```
+
+| Cara | Contoh | Keterangan |
+|---|---|---|
+| Akses pakai index | `data.0` | ambil data ke-0 (pertama) |
+| Destructuring | `let (a, b, c) = data;` | ambil semua sekaligus |
+
+> `{:?}` dipakai untuk menampilkan tuple, karena `{}` biasa tidak bisa menampilkan tuple.
+
+### Tuple mutable
+
+Kalau isi tuple mau diubah, tambahkan `mut`. Ubah datanya lewat index.
+
+```rust
+#[test]
+fn tuple_mutable() {
+    let mut data = (10, 10.6, true);
+    println!("{:?}", data);
+
+    data.0 = 15;
+    data.1 = 10.2;
+    data.2 = false;
+    println!("{:?}", data);
+}
+```
+
+- Jalankan: `cargo test tuple_mutable -- --exact --nocapture`
+
+Output:
+```
+(10, 10.6, true)
+(15, 10.2, false)
+```
+
+> Tipe datanya tetap tidak boleh berubah (static typing): `data.0 = "teks"` akan error.

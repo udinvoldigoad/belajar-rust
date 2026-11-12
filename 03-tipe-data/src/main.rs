@@ -49,3 +49,44 @@ fn boolean() {
     let b: bool = false; // explicit
     println!("{} {}", a, b);
 }
+
+// Char
+#[test]
+fn char() {
+    let char1 = 'a';
+    let char2 = 'b';
+
+    println!("{} {}", char1, char2);
+}
+
+// Tuple
+#[test]
+fn tuple() {
+    let data: (i32, f64, bool) = (10, 10.5, true);
+    println!("{:?}", data);
+
+    // mengakses tuple pakai titik (.)
+    let a = data.0;
+    let b = data.1;
+    let c= data.2;
+    println!("{} {} {}", a, b, c);
+
+    // destructuring tuple
+    let (a, b, c) = data;
+    println!("{} {} {}", a, b, c);
+}
+
+// Tuple Mutable
+#[test]
+fn tuple_mutable() {
+    let mut data = (10, 10.6, true);
+    println!("{:?}", data);
+
+    let (a, b, c) = data;
+    println!("{} {} {}", a, b, c);
+
+    data.0 = 15;
+    data.1 = 10.2;
+    data.2 = false;
+    println!("{:?}", data);
+}
